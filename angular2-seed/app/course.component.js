@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.service', './auto-grow.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_service_1;
+    var core_1, course_service_1, auto_grow_directive_1;
     var CourseComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
             },
             function (course_service_1_1) {
                 course_service_1 = course_service_1_1;
+            },
+            function (auto_grow_directive_1_1) {
+                auto_grow_directive_1 = auto_grow_directive_1_1;
             }],
         execute: function() {
             CourseComponent = (function () {
@@ -29,8 +32,9 @@ System.register(['angular2/core', './course.service'], function(exports_1, conte
                 CourseComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: "<h2><b>Courses</b></h2>\n                <ul>\n                    <li *ngFor=\"#course of courses\">\n                        {{course}}\n                    </li>\n                </ul>\n         ",
-                        providers: [course_service_1.CourseService]
+                        template: "<h2><b>Courses</b></h2>\n                {{courseTitle}}\n                <input type='text' autoGrow />\n                <ul>\n                    <li *ngFor=\"#course of courses\">\n                        {{course}}\n                    </li>\n                </ul>\n         ",
+                        providers: [course_service_1.CourseService],
+                        directives: [auto_grow_directive_1.AutoGrowDirective]
                     }), 
                     __metadata('design:paramtypes', [course_service_1.CourseService])
                 ], CourseComponent);
