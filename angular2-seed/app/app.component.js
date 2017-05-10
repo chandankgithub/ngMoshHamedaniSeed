@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.component', './author.component', './favourite-star.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.component', './author.component', './favourite-star.component', './like.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.component', './author.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_component_1, author_component_1, favourite_star_component_1;
+    var core_1, course_component_1, author_component_1, favourite_star_component_1, like_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,19 +25,30 @@ System.register(['angular2/core', './course.component', './author.component', '.
             },
             function (favourite_star_component_1_1) {
                 favourite_star_component_1 = favourite_star_component_1_1;
+            },
+            function (like_component_1_1) {
+                like_component_1 = like_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.twitter = {
+                        likeStatus: true,
+                        likesCount: 35
+                    };
                 }
+                AppComponent.prototype.onLikeStatusChange = function (eve) {
+                    console.log(eve);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <fav-star> </fav-star>\n            ",
+                        template: "\n                <like [iLike]=\"twitter.likeStatus\"\n                      [noOfLikes]=\"twitter.likesCount\"\n                    (change)=\"onLikeStatusChange(e)\" \n                ></like>\n            ",
                         directives: [
                             course_component_1.CourseComponent,
                             author_component_1.AuthorComponent,
-                            favourite_star_component_1.FavouriteStartComponent
+                            favourite_star_component_1.FavouriteStartComponent,
+                            like_component_1.LikeComponent
                         ]
                     }), 
                     __metadata('design:paramtypes', [])
