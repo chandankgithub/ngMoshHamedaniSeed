@@ -3,18 +3,19 @@ import {CourseComponent} from './course.component'
 import {AuthorComponent} from './author.component'
 import {FavouriteStartComponent} from './favourite-star.component'
 import {VoteComponent} from './voter.component'
+import {TwitterComponent} from './twitter.component';
+
 @Component({
     selector: 'my-app',
     template: `
-                <vote   [voteCount]="vote.noOfVotes"
-                        [myVote]="vote.myVote"
-                        (onVote)="onVoteChange($event)"></vote>
+                <twitter> </twitter>
             `,
     directives: [
                     CourseComponent, 
                     AuthorComponent, 
                     FavouriteStartComponent,
-VoteComponent
+                    VoteComponent,
+                    TwitterComponent
                 ]
                   
 })

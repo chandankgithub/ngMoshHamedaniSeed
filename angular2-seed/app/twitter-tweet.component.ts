@@ -12,5 +12,6 @@ export class TwitterTweetComponent{
     @Input() authorName: string;
     @Input() twitterName: string;
     @Input() description: string;
+    @Input() likes:any;
 
 }

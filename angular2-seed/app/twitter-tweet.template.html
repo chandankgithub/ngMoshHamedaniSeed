@@ -14,7 +14,10 @@
                             <span> {{description}}</span>
                     </div>
                     <div>
-                        <like></like>
+                        <like 
+                        [noOfLikes]="likes.likeCount"
+                        [iLike]="likes.iLike"
+                        ></like>
                     </div>
                    
                 </div>
