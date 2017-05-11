@@ -1,0 +1,11 @@
+<div class="voterUI">
+    <i class="glyphicon glyphicon-menu-up"
+        (click)="onMenuUpClick()"
+        [class.menuup.orange]="isMenuClicked" >
+    </i>
+    <span>{{voterCount}}</span>
+    <i class="glyphicon glyphicon-menu-down"
+        (click)="onMenuDownClick()"
+        [class.menudown.orange]="isMenuClicked">
+    </i>
+</div>

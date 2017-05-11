@@ -1,4 +1,4 @@
-System.register(['angular2/core', './course.component', './author.component', './favourite-star.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './course.component', './author.component', './favourite-star.component', './voter.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './course.component', './author.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, course_component_1, author_component_1, favourite_star_component_1;
+    var core_1, course_component_1, author_component_1, favourite_star_component_1, voter_component_1;
     var AppComponent;
     return {
         setters:[
@@ -25,19 +25,30 @@ System.register(['angular2/core', './course.component', './author.component', '.
             },
             function (favourite_star_component_1_1) {
                 favourite_star_component_1 = favourite_star_component_1_1;
+            },
+            function (voter_component_1_1) {
+                voter_component_1 = voter_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.vote = {
+                        noOfVotes: 50,
+                        myVote: -1
+                    };
                 }
+                AppComponent.prototype.onVoteChange = function (e) {
+                    //console.log(e);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <fav-star> </fav-star>\n            ",
+                        template: "\n                <vote   [voteCount]=\"vote.noOfVotes\"\n                        [myVote]=\"vote.myVote\"\n                        (onVote)=\"onVoteChange($event)\"></vote>\n            ",
                         directives: [
                             course_component_1.CourseComponent,
                             author_component_1.AuthorComponent,
-                            favourite_star_component_1.FavouriteStartComponent
+                            favourite_star_component_1.FavouriteStartComponent,
+                            voter_component_1.VoteComponent
                         ]
                     }), 
                     __metadata('design:paramtypes', [])
