@@ -1,0 +1,8 @@
+<div> 
+                    <i class="glyphicon customHeart"
+                        [class.glyphicon-heart]="iLike"
+                        [class.glyphicon-heart-empty]="!iLike"
+                        (click)="onLike()"></i>
+                    <span><h1>{{noOfLikes}}</h1></span>
+                    
+    </div>

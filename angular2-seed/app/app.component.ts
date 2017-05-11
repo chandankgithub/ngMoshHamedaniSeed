@@ -14,13 +14,13 @@ import {VoteComponent} from './voter.component'
                     CourseComponent, 
                     AuthorComponent, 
                     FavouriteStartComponent,
-                    VoteComponent
+VoteComponent
                 ]
                   
 })
 export class AppComponent { 
 
-    vote={
+  vote={
         noOfVotes:50,
         myVote:-1
     }
