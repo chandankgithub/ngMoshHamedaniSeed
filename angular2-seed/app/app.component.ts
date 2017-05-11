@@ -8,7 +8,7 @@ import {LikeComponent} from './like.component'
     template: `
                 <like [iLike]="twitter.likeStatus"
                       [noOfLikes]="twitter.likesCount"
-                    (change)="onLikeStatusChange(e)" 
+                    (change)="onLikeStatusChange($event)" 
                 ></like>
             `,
     directives: [
@@ -26,6 +26,6 @@ export class AppComponent {
         likesCount:35
     }
     onLikeStatusChange(eve){
-        console.log(eve);
+        console.log("Event: " + eve);
     }
 }

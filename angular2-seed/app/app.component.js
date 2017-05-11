@@ -38,12 +38,12 @@ System.register(['angular2/core', './course.component', './author.component', '.
                     };
                 }
                 AppComponent.prototype.onLikeStatusChange = function (eve) {
-                    console.log(eve);
+                    console.log("Event: " + eve);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <like [iLike]=\"twitter.likeStatus\"\n                      [noOfLikes]=\"twitter.likesCount\"\n                    (change)=\"onLikeStatusChange(e)\" \n                ></like>\n            ",
+                        template: "\n                <like [iLike]=\"twitter.likeStatus\"\n                      [noOfLikes]=\"twitter.likesCount\"\n                    (change)=\"onLikeStatusChange($event)\" \n                ></like>\n            ",
                         directives: [
                             course_component_1.CourseComponent,
                             author_component_1.AuthorComponent,

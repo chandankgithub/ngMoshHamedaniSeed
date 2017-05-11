@@ -18,7 +18,7 @@ export class LikeComponent{
    onLike(){
     this.iLike = !this.iLike;
     this.noOfLikes = this.iLike ? this.noOfLikes += 1 : this.noOfLikes -= 1;
-    this.change.emit(this.noOfLikes);
+    this.change.emit(this.noOfLikes)
   }
   @Output() change = new EventEmitter();
 }
