@@ -2,30 +2,29 @@ import {Component} from 'angular2/core';
 import {CourseComponent} from './course.component'
 import {AuthorComponent} from './author.component'
 import {FavouriteStartComponent} from './favourite-star.component'
-import {LikeComponent} from './like.component'
+import {VoteComponent} from './voter.component'
 @Component({
     selector: 'my-app',
     template: `
-                <like [iLike]="twitter.likeStatus"
-                      [noOfLikes]="twitter.likesCount"
-                    (change)="onLikeStatusChange($event)" 
-                ></like>
+                <vote   [voteCount]="vote.noOfVotes"
+                        [myVote]="vote.myVote"
+                        (onVote)="onVoteChange($event)"></vote>
             `,
     directives: [
                     CourseComponent, 
                     AuthorComponent, 
                     FavouriteStartComponent,
-                    LikeComponent
+VoteComponent
                 ]
                   
 })
 export class AppComponent { 
 
-    twitter={
-        likeStatus:true,
-        likesCount:35
+  vote={
+        noOfVotes:50,
+        myVote:-1
     }
-    onLikeStatusChange(eve){
-        console.log("Event: " + eve);
+    onVoteChange(e){
+        //console.log(e);
     }
 }
