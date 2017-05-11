@@ -9,7 +9,7 @@ import {LikeComponent} from './like.component'
 })
 export class TwitterTweetComponent{
     @Input() profileImageSrc: string;
-    @Input() userName: string;
+    @Input() authorName: string;
     @Input() twitterName: string;
     @Input() description: string;
 
