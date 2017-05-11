@@ -3,7 +3,7 @@ export class TwitterTweetService{
     getTweets() : any[] { 
         return  [
                     {
-                        profileImageSrc: "http://lorempixel.com/100/100/people",
+                        profileImageSrc: "http://lorempixel.com/100/100/people?1",
                         authorName: 'Windward',
                         twitterName: '@windwardstudios',
                         description: 'Looking for a better company reporting or docgen app?',
@@ -13,7 +13,7 @@ export class TwitterTweetService{
                         }
                     },
                     {
-                        profileImageSrc: "http://lorempixel.com/100/100/people",
+                        profileImageSrc: "http://lorempixel.com/100/100/people?2",
                         authorName: 'Angular JS News',
                         twitterName: '@angularjs_news',
                         description: 'Right Relevance: Infulencers, Articles and Conversations',
@@ -23,7 +23,7 @@ export class TwitterTweetService{
                         }
                     },
                     {
-                        profileImageSrc: "http://lorempixel.com/100/100/people",
+                        profileImageSrc: "http://lorempixel.com/100/100/people?3",
                         authorName: 'UX & Bootstrap',
                         twitterName: '@3rdwave',
                         description: '10 Reasons Why Web Projects Fail',
