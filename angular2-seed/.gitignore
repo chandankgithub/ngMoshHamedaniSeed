@@ -10,4 +10,8 @@ bower_components
 **/*.user
 bin
 obj
+<<<<<<< HEAD
 packages
+=======
+packages
+>>>>>>> 54b5caf8081c50d1e50a0de727a3144f691f6012

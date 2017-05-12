@@ -5,10 +5,14 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
     templateUrl:'app/like.template.html',
     styles:[`
     
-        .customHeart{ 
+        .likeImg{ 
             color:deeppink;
-            font-size:30px
-        },
+            font-size:15px
+        }
+
+        .likeCount{
+            font-size:15px
+        }
     `]
     
 })

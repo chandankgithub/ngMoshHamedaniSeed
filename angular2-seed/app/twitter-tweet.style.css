@@ -1,0 +1,11 @@
+.tweet  {
+            padding-bottom: 25px;
+        }
+
+.twitterName    {
+    color: #ccc
+}
+.tweetHeading{
+    font-size: 18px;
+    font-weight: bold;
+}
