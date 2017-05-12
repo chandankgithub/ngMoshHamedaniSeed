@@ -4,18 +4,20 @@ import {AuthorComponent} from './author.component'
 import {FavouriteStartComponent} from './favourite-star.component'
 import {VoteComponent} from './voter.component'
 import {TwitterComponent} from './twitter.component';
+import {FacebookZippyComponent} from './facebook-zippy.component'
 
 @Component({
     selector: 'my-app',
     template: `
-                <twitter> </twitter>
+                <fb-zippy> </fb-zippy>
             `,
     directives: [
                     CourseComponent, 
                     AuthorComponent, 
                     FavouriteStartComponent,
                     VoteComponent,
-                    TwitterComponent
+                    TwitterComponent,
+                    FacebookZippyComponent
                 ]
                   
 })
