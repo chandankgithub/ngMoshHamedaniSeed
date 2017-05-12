@@ -5,11 +5,12 @@ import {FavouriteStartComponent} from './favourite-star.component'
 import {VoteComponent} from './voter.component'
 import {TwitterComponent} from './twitter.component';
 import {FacebookZippyComponent} from './facebook-zippy.component'
+import {BasicFormValidation} from './basic-form-validation.component'
 
 @Component({
     selector: 'my-app',
     template: `
-                <fb-zippy> </fb-zippy>
+                <basic-fv> </basic-fv>
             `,
     directives: [
                     CourseComponent, 
@@ -17,7 +18,8 @@ import {FacebookZippyComponent} from './facebook-zippy.component'
                     FavouriteStartComponent,
                     VoteComponent,
                     TwitterComponent,
-                    FacebookZippyComponent
+                    FacebookZippyComponent,
+                    BasicFormValidation
                 ]
                   
 })
