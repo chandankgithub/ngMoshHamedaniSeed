@@ -1,0 +1,70 @@
+<form #form="ngForm">
+    <div class="form-group form-wrapper">
+        <div>
+            <label for="name">Name</label>
+            <input 
+                    ngControl="name" 
+                    #name="ngForm"
+                    (change)="onChange(name)"
+                    id="name" 
+                    class="form-control" 
+                    type="text"
+                    required
+                    minlength="10">
+        </div>
+        <div *ngIf="name.touched && name.errors" class="alert alert-danger">
+                <span *ngIf="name.errors.required">
+                         Name is required !
+                </span>
+                <span *ngIf="name.errors.minlength">
+                         Name should be at least {{name.errors.minlength.requiredLength}} letters !
+                </span>
+        </div>
+
+        <div class="section-wrapper">
+            <label for="">Email</label>
+            <input  type="text" 
+                    id="email" 
+                    class="form-control"
+                    ngControl="email"
+                    #email1="ngForm"
+                    required
+                    minlength="3"
+                    (change)="onChange(email)">
+        </div>
+        <div class="alert alert-danger"
+             *ngIf="email1.touched && email1.errors">
+            <span *ngIf="email1.errors.required">
+                Email is required !
+            </span>
+            <span *ngIf="email1.errors.minlength">
+                Email should be of minimum {{email1.errors.minlength.requiredLength}} letters.
+            </span>
+        </div>
+
+        <div class="section-wrapper">
+            <label for="">Frequency of emails</label>
+            <select     id="emailFrequency" 
+                        class="form-control"
+                        ngControl="emailFrequency"
+                        #emailFreq="ngForm"
+                        required
+                        (change)="onChange(emailFreq)">
+                <option value=""></option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+        <div    class="alert alert-danger"
+                *ngIf="emailFreq.touched && emailFreq.errors">
+            <span *ngIf="emailFreq.errors.required">
+                    Frequency of email is required !
+            </span>
+        </div>
+        <div class="section-wrapper">
+            <button class="btn btn-primary" id="btnSubmit" [disabled]="!form.form.valid">Submit</button>
+        </div>
+
+    </div>
+</form>
