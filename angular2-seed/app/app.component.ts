@@ -6,11 +6,12 @@ import {VoteComponent} from './voter.component'
 import {TwitterComponent} from './twitter.component';
 import {FacebookZippyComponent} from './facebook-zippy.component'
 import {BasicFormValidation} from './basic-form-validation.component'
+import {ChangePassword} from './change-password'
 
 @Component({
     selector: 'my-app',
     template: `
-                <basic-fv> </basic-fv>
+                <change-password> </change-password>
             `,
     directives: [
                     CourseComponent, 
@@ -19,17 +20,11 @@ import {BasicFormValidation} from './basic-form-validation.component'
                     VoteComponent,
                     TwitterComponent,
                     FacebookZippyComponent,
-                    BasicFormValidation
+                    BasicFormValidation,
+                    ChangePassword
                 ]
                   
 })
 export class AppComponent { 
 
-  vote={
-        noOfVotes:50,
-        myVote:-1
-    }
-    onVoteChange(e){
-        //console.log(e);
-    }
 }
