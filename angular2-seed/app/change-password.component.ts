@@ -19,7 +19,7 @@ export class ChangePasswordComponent{
                                         Validators.required,
                                         PasswordValidator.minrequiredlength
                                         ])],
-            confirmpassword: ['',Validators.compose([Validators.required])]
+            confirmpassword: ['',Validators.required, PasswordValidator.matchpasswordasync]
         })
     };
 
@@ -37,6 +37,9 @@ export class ChangePasswordComponent{
         }
     };
 
+    /** onConfirmPasswordChange was being used for onChange event, that means synchronous. It was working as expected.
+     * But since we moved to asynchronous, this method not in use.
+     */
     onConfirmPasswordChange(control){
         this.confirmPasswordVal = control.value;
         //Todo: Code Refactor
