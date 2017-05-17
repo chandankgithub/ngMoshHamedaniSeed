@@ -7,11 +7,12 @@ import {TwitterComponent} from './twitter.component';
 import {FacebookZippyComponent} from './facebook-zippy.component'
 import {BasicFormValidation} from './basic-form-validation.component'
 import {ChangePassword} from './change-password'
+import {ObservablesDemoComponent} from './observables-demo.component'
 
 @Component({
     selector: 'my-app',
     template: `
-                <change-password> </change-password>
+                <observable-demo> </observable-demo>
             `,
     directives: [
                     CourseComponent, 
@@ -21,7 +22,8 @@ import {ChangePassword} from './change-password'
                     TwitterComponent,
                     FacebookZippyComponent,
                     BasicFormValidation,
-                    ChangePassword
+                    ChangePassword,
+                    ObservablesDemoComponent
                 ]
                   
 })
