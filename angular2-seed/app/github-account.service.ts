@@ -18,7 +18,7 @@ export class GitHubAccountService{
                     .map(response => <IUserProfile>response.json());
     }
 
-    getUserFollowers(userName?: string) : Observable<IFollower>{
+    getUserFollowers(userName?: string) : Observable<IFollower[]>{
         return this._http.get(this._url_userfollowers)
                     .map(response => response.json());
     }
