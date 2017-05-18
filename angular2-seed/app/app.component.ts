@@ -1,34 +1,24 @@
 import {Component} from 'angular2/core';
-import {CourseComponent} from './course.component'
-import {AuthorComponent} from './author.component'
-import {FavouriteStartComponent} from './favourite-star.component'
-import {VoteComponent} from './voter.component'
-import {TwitterComponent} from './twitter.component';
-import {FacebookZippyComponent} from './facebook-zippy.component'
-import {BasicFormValidation} from './basic-form-validation.component'
-import {ChangePassword} from './change-password'
-import {ObservablesDemoComponent} from './observables-demo.component'
-import {GitHubAccountComponent} from './github-account.component'
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {ArchiveComponent} from './archive.component';
+import {ArchiveDetailComponent} from './archive-detail.component';
+
+@RouteConfig(
+    [
+        { path: '/home', name:'Home', component:ArchiveComponent, useAsDefault:true},
+        { path: '/archives/:year/:month', name:'Archives', component:ArchiveDetailComponent},
+        { path: '/*other', name:'Other', redirectTo:['Home']}
+    ])
 @Component({
     selector: 'my-app',
+    // templateUrl: '/app/app.component.html'
     template: `
-                <github-account> </github-account>
-            `,
-    directives: [
-                    CourseComponent, 
-                    AuthorComponent, 
-                    FavouriteStartComponent,
-                    VoteComponent,
-                    TwitterComponent,
-                    FacebookZippyComponent,
-                    BasicFormValidation,
-                    ChangePassword,
-                    ObservablesDemoComponent,
-                    GitHubAccountComponent
-                ]
-                  
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    `,
+    directives:[ArchiveDetailComponent, ROUTER_DIRECTIVES]
 })
-export class AppComponent { 
-
+export class AppComponent {
 }
