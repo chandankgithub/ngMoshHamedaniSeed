@@ -1,13 +1,12 @@
-<div class="panel panel-default">
-                        <div class="panel-heading">
-                             <div 
-                              class="glyphicon glyphicon-chevron-up"
-                              style="text-align: right"
-                              >
-
-                             </div>
-                        </div>
-                        <div class="panel-body" style="cursor:pointer">
-                            <ng-content></ng-content>
-                        </div>
-                </div>
+<div>
+    <div>
+        Followers
+    </div>
+    <div *ngFor="#follower of followers">
+        <img src={{avatar_url}} alt="">
+        <span>
+            {{followerName}}
+        </span>
+    
+    </div>
+</div>

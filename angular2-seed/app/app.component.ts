@@ -8,11 +8,12 @@ import {FacebookZippyComponent} from './facebook-zippy.component'
 import {BasicFormValidation} from './basic-form-validation.component'
 import {ChangePassword} from './change-password'
 import {ObservablesDemoComponent} from './observables-demo.component'
+import {GitHubAccountComponent} from './github-account.component'
 
 @Component({
     selector: 'my-app',
     template: `
-                <observable-demo> </observable-demo>
+                <github-account> </github-account>
             `,
     directives: [
                     CourseComponent, 
@@ -23,7 +24,8 @@ import {ObservablesDemoComponent} from './observables-demo.component'
                     FacebookZippyComponent,
                     BasicFormValidation,
                     ChangePassword,
-                    ObservablesDemoComponent
+                    ObservablesDemoComponent,
+                    GitHubAccountComponent
                 ]
                   
 })
