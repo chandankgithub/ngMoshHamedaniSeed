@@ -6,20 +6,18 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GitHubAccountService{
-    private _url_userprofile: string = "https://api.github.com/users/octocat";
-    private _url_userfollowers: string = "https://api.github.com/users/octocat/followers";
-
+    private base_url: string = "https://api.github.com/users/";
     constructor(private _http: Http){
 
     }
     
-    getUserProfile(): Observable<IUserProfile> {
-        return this._http.get(this._url_userprofile)
+    getUserProfile(username:string): Observable<IUserProfile> {
+        return this._http.get(this.base_url + username)
                     .map(response => <IUserProfile>response.json());
     }
 
-    getUserFollowers(userName?: string) : Observable<IFollower[]>{
-        return this._http.get(this._url_userfollowers)
+    getUserFollowers(username: string) : Observable<IFollower[]>{
+        return this._http.get(this.base_url + username + "/followers")
                     .map(response => response.json());
     }
 }

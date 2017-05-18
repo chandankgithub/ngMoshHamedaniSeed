@@ -4,13 +4,10 @@ import {Component, Input, OnInit} from 'angular2/core';
     selector: 'github-follower',
     template:`
             <div>
-                <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <img class="media-object img-circle" style='float:left;width:100px;height:100px; margin-right:10px;' src={{avatar_url}} />
+                <div class="col-md-12">
+                        <img class="media-object img-circle" style='float:left;width:100px;height:100px; margin-right:10px;margin-top:15px;' src={{avatar_url}} />
                         {{follower_name}}
-                    </div>
-                 </div>
+                </div>
             </div>
     `,
     styles: [`

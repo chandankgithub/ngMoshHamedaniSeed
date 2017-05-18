@@ -44,6 +44,7 @@ import 'rxjs/add/observable/forkJoin';
             .login{
                 font-size: 30px;
                 font-weight: bold;
+                margin-top: 20px;
             }
             .follower-wrapper{
                 padding: 10px;
@@ -56,16 +57,11 @@ import 'rxjs/add/observable/forkJoin';
     providers: [GitHubAccountService, HTTP_PROVIDERS]
 })
 export class GitHubAccountComponent implements OnInit {
-    userProfile: any;
     account:IAccount;
     isLoading:boolean = true;
+    username: string="octocat";
 
     constructor(private _service: GitHubAccountService) {
-        this.userProfile = {
-            login: '',
-            avatar_url:'',
-            followers:[]
-        };
         
         this.account={
             user_profile:{
@@ -78,14 +74,14 @@ export class GitHubAccountComponent implements OnInit {
     }
     ngOnInit() {
         
-        Observable.forkJoin(this._service.getUserProfile(), this._service.getUserFollowers())
+        Observable.forkJoin(this._service.getUserProfile(this.username), this._service.getUserFollowers(this.username))
             .delay(2000)
             .subscribe(data => {
                         this.isLoading=false;
                         this.bindUserAccount(data[0], data[1])
                         },
                         (err) => console.log(err),
-                        () => console.log('Done'));
+                        () => this.isLoading=false);
 
         // Observable.fromArray([1,2,3])
         // .delay(5000)
